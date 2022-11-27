@@ -51,7 +51,7 @@
     transform: translateY(-50%);
     display: none;
   }
-    @media (max-width:700px) {
+    @media (max-width:500px) {
       > .menu{display: none;} 
       > .logo{margin: 0 auto;}
       > .toggleAside {

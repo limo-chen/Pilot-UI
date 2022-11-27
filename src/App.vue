@@ -5,6 +5,7 @@
 
 <script lang="ts">
 import { provide, ref } from 'vue';
+import { router } from './router';
 
 
 export default {
@@ -13,6 +14,12 @@ export default {
     const width = document.documentElement.clientWidth;
     const menuVisible = ref(width <= 700 ? false : true);
     provide("menuVisible", menuVisible); // set
+    router.afterEach(()=>{
+      if(width <= 500){
+        menuVisible.value = false;
+      }
+     
+    })
   },
 };
 </script>
