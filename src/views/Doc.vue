@@ -29,10 +29,11 @@ import { inject, Ref } from "vue";
 import Topnav from "../components/Topnav.vue";
  export default{
     components: { Topnav },
-    setup(){
-   const menuVisible = inject<Ref<boolean>>('menuVisible')
-    return {menuVisible}
-}
+
+    setup() {
+    const menuVisible = inject<Ref<boolean>>("menuVisible"); // get
+    return { menuVisible };
+  },
 };
 </script>
 <style lang="scss" scoped>
