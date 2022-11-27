@@ -1,17 +1,18 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "./index.css";
+import "./index.scss";
 import { createWebHashHistory, createRouter } from "vue-router";
-import Limo from './components/Limo.vue'
-import Limo2 from './components/Limo2.vue'
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
+
 
 
 const history = createWebHashHistory();
 const router = createRouter({
     history :history,
     routes:[
-        {path:'/',component:Limo},
-        {path:"/xxx",component:Limo2}
+        {path:'/',component:Home},
+        {path:"/doc",component:Doc}
     ]
 });
 
