@@ -61,7 +61,7 @@ import Topnav from "../components/Topnav.vue";
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: white;
   }
 }
 aside {
