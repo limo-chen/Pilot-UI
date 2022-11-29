@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="ts" scoped>
+<style lang="ts">
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;

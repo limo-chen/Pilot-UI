@@ -1,5 +1,6 @@
 <template>
-       <button @click="toggle" :class="{checked:value}"><span></span></button>
+       <button class="pilot-switch"
+       @click="toggle" :class="{'polit-checked':value}"><span></span></button>
    <div>{{value}}</div>
 </template>
 <script lang="ts">
@@ -16,10 +17,10 @@ value:Boolean,
 }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
  $h: 22px;
   $h2: $h - 4px;
-  button{
+  .pilot-switch{
     height: $h;
     width: $h*2;
     border: none;
@@ -36,7 +37,7 @@ value:Boolean,
     border-radius: $h2 / 2;
     transition: all 250ms;
 }
-&.checked{
+&.polit-checked{
     background: #1890ff;
     > span {
     left: calc(100% - #{$h2} - 2px);
@@ -49,7 +50,7 @@ value:Boolean,
  &:active{
     > span {width: $h2 + 4px;}
   }
-&.checked:active{
+&.polit-checked:active{
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
   }
