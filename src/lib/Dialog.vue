@@ -1,5 +1,6 @@
 <template>
-<div class="pilot-dialog-overlay"></div>
+    <template v-if="visible">
+        <div class="pilot-dialog-overlay"></div>
 <div class="pilot-dialog-wrapper">
   <div class="pilot-dialog">
     <header>标题 <span class="pilot-dialog-close"></span></header>
@@ -13,11 +14,17 @@
     </footer>
   </div>
    </div>
-   
+    </template>
 </template>
 <script lang="ts">
 import Button from './Button.vue'
 export default{
+    props:{
+visible:{
+    type:Boolean,
+    default:false,
+}
+    },
     components: {
         Button,
   },
