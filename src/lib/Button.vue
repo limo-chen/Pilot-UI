@@ -1,48 +1,48 @@
-<template >    
-    <button class="pilot-button" :class="classes" :disabled="disabled">
-      <div v-if="loading" class="pilot-loadingIndicator"></div>
-   <slot />
-    </button>
+<template>
+   <button class="pilot-button" :class="classes" :disabled="disabled">
+    <span v-if="loading" class="pilot-loadingIndicator"></span>
+    <slot />
+  </button>
 </template>
 <script lang="ts">
 import { computed } from "vue";
 export default {
-  props:{
-    theme:{
-        type:String,
-        default: "button",
+  props: {
+    theme: {
+      type: String,
+      default: "button",
     },
-    size:{
-      type:String,
-      default:'button',
+    size: {
+      type: String,
+      default: "normal",
     },
     level: {
       type: String,
       default: "normal",
     },
-    disabled:{ 
+    disabled: {
       type: Boolean,
-      default:false,
+      default: false,
     },
     loading: {
       type: Boolean,
       default: false
     }
   },
-  setup(props){
-    const {theme,size,level} = props;
+  setup(props) {
+    const { theme, size, level } = props;
     const classes = computed(() => {
-  return {
-  [`pilot-theme-${theme}`]: theme,
-  [`pilot-theme-${size}`]: size,
-  [`pilot-level-${level}`]: level,
-};
-})
-return { classes };
-  }
-}
-</script>
+      return {
+        [`pilot-theme-${theme}`]: theme,
+        [`pilot-size-${size}`]: size,
+        [`pilot-level-${level}`]: level,
 
+      };
+    });
+    return { classes };
+  },
+};
+</script>
 <style lang="scss">
 $h: 32px;
 $border-color: #d9d9d9;
@@ -80,13 +80,12 @@ $grey: grey;
   &::-moz-focus-inner {
     border: 0;
   }
-
-&.pilot-theme-link {
+  &.pilot-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
     &:hover,
-    &:focus{
+    &:focus {
       color: lighten($blue, 10%);
     }
   }
@@ -99,17 +98,17 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.pilot-size-big {
-    font-size: 24px;
-    height: 48px;
-    padding: 0 16px;
-  }
-  &.pilot-size-small {
-    font-size: 12px;
-    height: 20px;
-    padding: 0 4px;
-  }
-  &.pilot-theme-button {
+&.pilot-size-big {
+  font-size: 24px;
+  height: 48px;
+  padding: 0 16px;
+}
+&.pilot-size-small {
+  font-size: 12px;
+  height: 20px;
+  padding: 0 4px;
+}
+&.pilot-theme-button {
     &.pilot-level-main {
       background: $blue;
       color: white;
@@ -186,5 +185,5 @@ $grey: grey;
 @keyframes pilot-spin {
   0%{transform: rotate(0deg)} 
   100%{transform: rotate(360deg)} 
-  }
+}
 </style>

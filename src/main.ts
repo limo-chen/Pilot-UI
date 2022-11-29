@@ -1,4 +1,4 @@
-import './lib/polit.scss'
+import './lib/pilot.scss'
 import "./index.scss";
 import { createApp } from "vue";
 import App from "./App.vue";
