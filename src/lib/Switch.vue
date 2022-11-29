@@ -1,6 +1,6 @@
 <template>
        <button class="pilot-switch"
-       @click="toggle" :class="{'polit-checked':value}"><span></span></button>
+       @click="toggle" :class="{'pilot-checked':value}"><span></span></button>
    <div>{{value}}</div>
 </template>
 <script lang="ts">
@@ -37,7 +37,7 @@ value:Boolean,
     border-radius: $h2 / 2;
     transition: all 250ms;
 }
-&.polit-checked{
+&.pilot-checked{
     background: #1890ff;
     > span {
     left: calc(100% - #{$h2} - 2px);
@@ -50,7 +50,7 @@ value:Boolean,
  &:active{
     > span {width: $h2 + 4px;}
   }
-&.polit-checked:active{
+&.pilot-checked:active{
     > span {width: $h2 + 4px; margin-left: -4px;}
   }
   }

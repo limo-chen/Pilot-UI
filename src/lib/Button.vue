@@ -1,7 +1,7 @@
 <template >    
-    <button class="polit-button" :class="classes" :disabled="disabled">
-      <div v-if="loading" class="polit-loadingIndicator"></div>
-      <slot />
+    <button class="pilot-button" :class="classes" :disabled="disabled">
+      <div v-if="loading" class="pilot-loadingIndicator"></div>
+   <slot />
     </button>
 </template>
 <script lang="ts">
@@ -33,9 +33,9 @@ export default {
     const {theme,size,level} = props;
     const classes = computed(() => {
   return {
-  [`polit-theme-${theme}`]: theme,
-  [`polit-theme-${size}`]: size,
-  [`poilt-level-${level}`]: level,
+  [`pilot-theme-${theme}`]: theme,
+  [`pilot-theme-${size}`]: size,
+  [`pilot-level-${level}`]: level,
 };
 })
 return { classes };
@@ -51,7 +51,7 @@ $blue: #40a9ff;
 $radius: 4px;
 $red: red;
 $grey: grey;
-.poilt-button {
+.pilot-button {
   box-sizing: border-box;
   height: $h;
   padding: 0 12px;
@@ -81,7 +81,7 @@ $grey: grey;
     border: 0;
   }
 
-&.polit-theme-link {
+&.pilot-theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
@@ -90,7 +90,7 @@ $grey: grey;
       color: lighten($blue, 10%);
     }
   }
-  &.polit-theme-text {
+  &.pilot-theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
@@ -99,18 +99,18 @@ $grey: grey;
       background: darken(white, 5%);
     }
   }
-  &.polit-size-big {
+  &.pilot-size-big {
     font-size: 24px;
     height: 48px;
     padding: 0 16px;
   }
-  &.polit-size-small {
+  &.pilot-size-small {
     font-size: 12px;
     height: 20px;
     padding: 0 4px;
   }
-  &.polit-theme-button {
-    &.polit-level-main {
+  &.pilot-theme-button {
+    &.pilot-level-main {
       background: $blue;
       color: white;
       border-color: $blue;
@@ -120,7 +120,7 @@ $grey: grey;
         border-color: darken($blue, 10%);
       }
     }
-    &.polit-level-danger {
+    &.pilot-level-danger {
       background: $red;
       border-color: $red;
       color: white;
@@ -131,8 +131,8 @@ $grey: grey;
       }
     }
   }
-  &.polit-theme-link {
-    &.polit-level-danger {
+  &.pilot-theme-link {
+    &.pilot-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -140,15 +140,15 @@ $grey: grey;
       }
     }
   }
-  &.polit-theme-text {
-    &.polit-level-main {
+  &.pilot-theme-text {
+    &.pilot-level-main {
       color: $blue;
       &:hover,
       &:focus {
         color: darken($blue, 10%);
       }
     }
-    &.polit-level-danger {
+    &.pilot-level-danger {
       color: $red;
       &:hover,
       &:focus {
@@ -156,7 +156,7 @@ $grey: grey;
       }
     }
   }
-  &.polit-theme-button {
+  &.pilot-theme-button {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
@@ -165,13 +165,13 @@ $grey: grey;
       }
     }
   }
-  &.polit-theme-link, &.polit-theme-text {
+  &.pilot-theme-link, &.pilot-theme-text {
     &[disabled] {
       cursor: not-allowed;
       color: $grey;
     }
   }
-  > .polit-loadingIndicator{
+  > .pilot-loadingIndicator{
     width: 14px;
     height: 14px;
     display: inline-block;
@@ -180,10 +180,10 @@ $grey: grey;
     border-color: $blue $blue $blue transparent;
     border-style: solid;
     border-width: 2px;
-    animation: polit-spin 1s infinite linear;
+    animation: pilot-spin 1s infinite linear;
   }
 }
-@keyframes polit-spin {
+@keyframes pilot-spin {
   0%{transform: rotate(0deg)} 
   100%{transform: rotate(360deg)} 
   }
