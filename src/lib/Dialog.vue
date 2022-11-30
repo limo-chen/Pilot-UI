@@ -3,10 +3,9 @@
         <div class="pilot-dialog-overlay" @click="onClickOverlay"></div>
 <div class="pilot-dialog-wrapper">
   <div class="pilot-dialog">
-    <header>标题 <span @click="close" class="pilot-dialog-close"></span></header>
+    <header><slot name="title" /> <span @click="close" class="pilot-dialog-close"></span></header>
     <main>
-      <p>第一行字</p>
-      <p>第二行字</p>
+     <slot name="content"/>
     </main>
     <footer>
       <Button level="main" @click="ok">OK</Button>
@@ -20,6 +19,7 @@
 import Button from './Button.vue'
 export default{
     props:{
+     
 visible:{
     type:Boolean,
     default:false,

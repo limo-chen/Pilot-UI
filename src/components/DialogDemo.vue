@@ -2,9 +2,18 @@
   <div>Dialog 示例</div>
       <h1>示例1</h1>
     <Button @click="toggle">toggle</Button>
-    <Dialog v-model:visible="x" :closeOnClickOverlay="false" 
+    <Dialog v-model:visible="x" 
+    :closeOnClickOverlay="false" 
     :ok="f1" :cancel="f2"
-    ></Dialog>
+    >
+    <template v-slot:content>
+      <div>你好</div>
+    <div>hi</div>
+    </template>
+    <template v-slot:title>
+ <strong>加粗的标题</strong>
+    </template>
+   </Dialog>
 </template>
 <script long="ts">
 import Dialog from '../lib/Dialog.vue'
