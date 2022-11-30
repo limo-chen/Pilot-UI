@@ -1,5 +1,6 @@
 <template>
     <template v-if="visible">
+      <Teleport to="body">//加上to="body"的意思是把Teleport所包含的东西都放到body下面去
         <div class="pilot-dialog-overlay" @click="onClickOverlay"></div>
 <div class="pilot-dialog-wrapper">
   <div class="pilot-dialog">
@@ -13,6 +14,8 @@
     </footer>
   </div>
    </div>
+      </Teleport>
+    
     </template>
 </template>
 <script lang="ts">
@@ -52,9 +55,8 @@ if(props.ok && props.ok() !== false){
 }
  }   
  const  cancel =()=>{
-    context.emit('cancel')
+  props.cancel?.()
     close()
-
  }
     return {
         close,onClickOverlay,ok,cancel
